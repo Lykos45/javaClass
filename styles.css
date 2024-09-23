@@ -1,0 +1,36 @@
+body{
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+main{
+    margin: 20px;
+}
+
+h1{
+    text-align: center;
+}
+
+.navbar ul{
+    list-style-type: none;
+    background-color: #212329;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+
+.navbar a:hover{
+    background-color: #ff0062;
+}
+
+.navbar li{
+    float: left;
+}

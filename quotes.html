@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Quotes</h1>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="quotes.html">Quotes</a></li>
+            <li><a href="test.html">Test</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h3>Quote</h3>
+
+        <p><!--Create array and prompt user then use the remainder.-->
+            <script>
+                var quotes = ["I am the best there is at what I do, but what I do isn't very nice.", "With great power comes great responsibility", "It's clobberin' time!", "I Am Vengeance. I Am The Night. I Am Batman!", "Avengers assemble!"];
+                var yourNumber = prompt("Please enter a number.");
+                var index = yourNumber % 5;
+                var remainder = quotes[index];
+                document.write(remainder);
+            </script>
+        </p>
+        <b></b>
+        <p><!--Creating websites.-->
+            <script>
+                var websites = ["<a href='https://www.marvel.com'>Marvel Comics Page</a> ", "<a href='https://www.dc.com'>DC Comics Page</a> ", "<a href='https://www.youtube.com'>YouTube Page</a>"];
+                document.write(websites);
+            </script>
+        </p>
+        <b></b>
+        <p><!--Ask user for thier favorite website then add to the array.-->
+            <script>
+                var yourWebsite = prompt("Please enter your favorite website.");
+                websites[3] = yourWebsite;
+                document.write(websites);
+            </script>
+        </p> 
+        <p><!--Delete old website from array and display website the user entered-->
+            <script>
+                websites.shift();
+                document.write(websites); 
+            </script>
+        </p>
+
+    </main>
+    
+</body>
+</html>
