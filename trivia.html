@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Hero Trivia</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="trivia.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Super Hero Trivia</h1>
+        
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="secret-number-game.html">Secret Number Game</a></li>
+                <li><a href="quiz.html">Super Hero Quiz</a></li>
+                <li><a href="trivia.html">Super Hero Trivia</a></li>
+            </ul>
+        </nav>
+
+<!--Date and Time-->
+<script>
+//displays date and time
+document.write("Today is: " + weekday[myDay] + " October 2024");
+document.write("<br/>");
+document.write("\tCurrent time is: " + myTime); 
+</script>
+
+<!--Create personalized greeting-->
+<script>
+//asking user for name and capitalizing 1st letter
+function capitalizeFLetter() {
+    var name = prompt("What is your name?");
+    alert("Nice to meet you, " + name [0].toUpperCase() + name.slice(1) + "!");
+    document.write(" Hello " + name [0].toUpperCase() + name.slice(1) + "!");
+}
+capitalizeFLetter()
+
+//displays greeting message to preffesor
+document.write(getGreeting());
+</script>
+
+<br>
+
+<!--User Info-->
+<script>
+/* validEmail validates an email address against a regular expression and returns true or false */
+    function validateEmail(email) {
+// Use a regular expression to validate the email format
+    var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    var valid = email.match(emailRegex);
+    return emailRegex.test(email);
+}
+  //ask user for email
+  function promptForEmail() {
+    var email = prompt("Please enter your email address:");
+    document.write("Your Email is: " + email);
+    document.write("<br/>");
+    document.write("Your username is: " + email.split('@')[0]);
+  
+    if (validateEmail(email)) {
+      // Email is valid
+      alert("Thank you for your email address: " + email [0].toUpperCase() + email.slice(1));
+    } else {
+      // Email is invalid
+      alert("Invalid email address. Please try again.");
+      promptForEmail(); // Prompt again if invalid
+    }
+  }
+  
+  promptForEmail();
+</script>
+
+<br>
+
+<!--Quote of the Day-->
+<script>
+    var quotes = ["Your quote of the day is: I am the best there is at what I do, but what I do isn't very nice.", "Your quote of the day is: With great power comes great responsibility", "Your quote of the day is: It's clobberin' time!", "Your quote of the day is: I Am Vengeance. I Am The Night. I Am Batman!", "Your quote of the day is: Avengers assemble!"];
+    var yourNumber = prompt("Please enter a number.");
+    var index = yourNumber % 5;
+    var remainder = quotes[index];
+    document.write(remainder);
+
+    //generate random # between 1-4
+    document.write("<br/>");
+    var randomNum = Math.floor(Math.random()*4)+1;
+    document.write("Your generated number is: " + randomNum);
+</script>
+
+<br>
+
+<!--Hero trivia section-->
+<script>
+	// call heroQuiz function
+	var score = heroQuiz();
+	// display the results on the screen
+	document.write('Your score is ' + score);
+    document.write("<br>");
+    // output percentage
+    document.write("Your percentage score is: " + percentageScore);
+</script>
+
+    </div>
+</body>
+</html>
