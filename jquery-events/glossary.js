@@ -17,35 +17,25 @@ var getElementById = ("coneflower");
 var getElementById = ("mum");
 var getElementById = ("rose");
 //Using hover to show image to user
-$('.pic').hover(function() {
+// show flowers
+$('.pic').hover(function(evt) {
+  // ID
+  var imgId = '#' + $(this).attr('title') + 'Img';
 
-  $('#coneflower').show();
-  
-  },function(){
-  //Using hide to conceal image to user
-  $('#coneflower').hide();
-  
-  });
-  //Using hover to show image to user
-  $('.pic').hover(function() {
-  
-  $('#mum').show();
-  
-  },function(){
-  //Using hide to conceal image to user
-  $('#mum').hide();
-  
-  });
-  //Using hover to show image to user
-  $('.pic').hover(function() {
-  
-  $('#rose').show();
-  
-  },function(){
-  //Using hide to conceal image to user
-  $('#rose').hide();
-  
-  });  
+  // x+y
+  var x = evt.pageX + 150; 
+  var y = evt.pageY;
+
+  $(imgId).css({
+      top: y + 'px',
+      left: x + 'px',
+      position: 'absolute' 
+  }).show();
+}, function() {
+  // hide on mouseout
+  var imgId = '#' + $(this).attr('title') + 'Img'; 
+  $(imgId).hide(); 
+});
 /*CODE ABOVE IS NOT DONE COULD NOT FIGURE OUT^^^*/
 
 /*Keypress event*/
