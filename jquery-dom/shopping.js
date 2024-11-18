@@ -1,6 +1,6 @@
 /*Add to cart*/
 $(document).ready(function() {
-    // Initialize cart count
+    //Initialize cart count
     var shoppingCart = 0; 
     
     //Add to cart event
@@ -19,53 +19,45 @@ $(document).ready(function() {
 
 /*Remove from cart*/
 $(document).ready(function() {
-    // Delegate the click event to the cart container
+    //Click event for removing items
     $("#cart").on("click", ".del", function(event) {
-      // Prevent the default link behavior (e.g., navigating to another page)
-      event.preventDefault();
-  
-      // Get the parent list item (or any other relevant container)
-      var cartItem = $(this).closest("li");
-  
-      // Remove the item from the cart visually
-      cartItem.remove();
-      // Perform any additional logic, such as updating cart totals or sending an AJAX request to update the server-side cart
-    });
-  });
-//////////////////////////////////////////////////////////////^CODE ABOVE DONE^///////////////////////////////////////////////////////////////////////////////////
-  
-//Add text back when cart is empty NOT WORKING****
-$(document).ready(function() {
-    // Check if the cart is empty
-    if ($("#cart").is("#empty")) {
-      // Add the text back
-      $(".add").show();
-    }
-  });
-  
-  
+        event.preventDefault();
 
+        //Get parent list item
+        var cartItem = $(this).closest("li");
+        var itemID = cartItem.attr("name");
+
+        //Remove items from the cart
+        cartItem.remove();
+
+        //Showing Add to Cart
+        $("#" + itemID).show();
+
+        //Check if cart is empty
+        if ($("#cart li").shoppingCart === 0) {
+            $("#cart").append("<li id='empty'>Your shopping cart is empty</li>");
+        }
+        //If cart is empty show empty message
+        if (shoppingCart === 0) {
+            $('#empty').show();
+        }
+    });
+});
 
 /*Star rating*/
-//Not working either******
 $(document).ready(function() {
-    $('.star').hover(
-      function() {
-        $(this).prevAll('.star').addBack().addClass('hovered');
-      },
-      function() {
-        $(this).prevAll('.star').addBack().removeClass('hovered');
-      }
-    );
-  
-    $('.star').click(function() {
-      let rating = $(this).data('rating');
-      $(this).parent().data('rating', rating);
-  
-      $(this).prevAll('.star').addBack().addClass('selected');
-      $(this).nextAll('.star').removeClass('selected');
+    //Star gif click event
+    $('.rating img').on('click', function() {
+        var $clickedStar = $(this);
+        var $rating = $clickedStar.closest('.rating');
+
+        //Changing image source of clicked star to staroff.gif
+        $rating.find('img').each(function() {
+            $(this).attr('src', 'staroff.gif');
+        });
+
+        //Changing image source of clicked star to 'staron.gif'
+        $rating.find('img').slice(0, $clickedStar.index() + 1).attr('src', 'staron.gif');
     });
-  });
-
-
-/*End Program*/
+});
+/*End of Program*/
