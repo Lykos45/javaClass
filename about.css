@@ -1,0 +1,84 @@
+body {
+	background: url(marvelR.jpg);
+	background-size: 100%;
+	background-repeat: repeat-y;
+}
+#tech {
+	width: 10em;
+	float: right;
+	padding: .5em 1em;
+	border: medium magenta groove;
+	border-radius: 10px;
+	margin-left: 1em;
+}
+#container {
+	width: 50em;
+	margin: 1em auto;
+	border: outset thick magenta;
+	background-color: rgba(255,255,255,.9);
+	padding: 1em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.error {
+	color: red;
+}
+a:link {
+	color: deeppink;
+}
+a:visited {
+	color: slateblue;
+}
+legend {
+	font-family: "Comic Sans MS";
+	color: darkgreen;
+}
+h1, h2, h3 {
+	color: blueviolet;
+	text-align: center;
+	line-height: .7em;
+	font-family: "Comic Sans MS";
+}
+label {
+	display: inline-block;
+	width: 20em;
+	text-align: right;
+	line-height: 1.5em;
+	padding-right: 1em;
+}
+th[colspan] {
+	text-align: right;
+}
+table {
+	border: thin solid darkgreen;
+	background-color: cornsilk;
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+td, th {
+	padding: .25em 1em;
+	border: thin green dotted;}
+td[id] {
+	text-align: right;
+}
+input[type='submit'] {
+	background-color: cornsilk;
+	font-size: .8em;
+	border-radius: 5px;
+	border: thin outset darkgreen;
+}
+#place {
+	text-align: center;
+}
+#main {clear: left;}
+
+#profile {
+    width: 10%;
+    height: auto;
+	position: absolute;
+	right: -100px;
+	top: 20px;
+	opacity: 0;
+}
+#container {
+	position: relative;
+}
